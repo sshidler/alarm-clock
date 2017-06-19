@@ -1,0 +1,11 @@
+#timer{
+  font-family: monospace;
+}
+
+#timer span:after{
+  content: ":";
+}
+
+#timer span:last-of-type:after{
+  content: "";
+}
