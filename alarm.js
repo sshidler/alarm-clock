@@ -1,11 +1,12 @@
 var totalSeconds = 0,
     seconds = 0,
     minutes = 0,
-    hours = 0;
+    hours = 0,
+    timer;
 
 $("#start").on("click", function(){
-  setInterval(function(){
-    totalSeconds++;
+  timer = setInterval(function(){
+ 
     
     seconds = totalSeconds % 60;
     minutes = Math.floor(totalSeconds / 60) % 60;
@@ -15,6 +16,14 @@ $("#start").on("click", function(){
     $("#hours").text(hours);
     
     console.log(totalSeconds);
+    totalSeconds++;
   },1000)
 });
 
+$("#reset").on("click", function(){
+  totalSeconds = 0;
+});
+
+$("#pause").on("click", function(){
+  clearInterval(timer);
+});
